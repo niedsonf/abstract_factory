@@ -14,8 +14,12 @@ function clientCode(factory: AbstractFactory) {
 
 console.log('Testando a fábrica esportiva...');
 clientCode(new SportiveFactory());
+//Pneu esportivo calibrado
+//Deu partida no motor esportivo
 
 console.log('');
 
 console.log('Testando a fábrica popular...');
 clientCode(new PopularFactory());
+//Pneu popular calibrado
+//Deu partida no motor popular
