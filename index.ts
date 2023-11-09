@@ -9,6 +9,7 @@ function clientCode(factory: AbstractFactory) {
     const onboardSystem = factory.createOnboardSystem();
 
     console.log(wheel.inflate());
+    console.log(wheel.seeRim());
     console.log(onboardSystem.startEngine(engine));
 }
 

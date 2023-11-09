@@ -1,19 +1,20 @@
-export interface AbstractFactory {
-    createWheel(): AbstractWheel;
-    createEngine(): AbstractEngine;
-    createOnboardSystem(): AbstractOnboardSystem;
+export abstract class AbstractFactory {
+    public abstract createWheel(): AbstractWheel;
+    public abstract createEngine(): AbstractEngine;
+    public abstract createOnboardSystem(): AbstractOnboardSystem;
 }
 
-export interface AbstractWheel {
-    rim: number;
-    inflate(): string;
+export abstract class AbstractWheel {
+    protected abstract rim: number;
+    public abstract seeRim(): string;
+    public abstract inflate(): string;
 }
 
-export interface AbstractEngine {
-    start(): string;
+export abstract class AbstractEngine {
+    public abstract start(): string;
 }
 
-export interface AbstractOnboardSystem {
-    lockDoors(): string;
-    startEngine(collaborator: AbstractEngine): string;
+export abstract class AbstractOnboardSystem {
+    public abstract lockDoors(): string;
+    public abstract startEngine(collaborator: AbstractEngine): string;
 }

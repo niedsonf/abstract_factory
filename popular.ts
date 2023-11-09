@@ -1,6 +1,6 @@
 import { AbstractFactory, AbstractWheel, AbstractEngine, AbstractOnboardSystem } from "./abstracts";
 
-export class PopularFactory implements AbstractFactory {
+export class PopularFactory extends AbstractFactory {
     public createWheel(): AbstractWheel {
         return new PopularWheel();
     }
@@ -14,21 +14,24 @@ export class PopularFactory implements AbstractFactory {
     }
 }
 
-class PopularWheel implements AbstractWheel {
+class PopularWheel extends AbstractWheel {
     rim = 16;
+    public seeRim(): string {
+        return `Pneu popular aro ${this.rim}"`;
+    }
     public inflate(): string {
         return 'Pneu popular calibrado';
     }
 }
 
 
-class PopularEngine implements AbstractEngine {
+class PopularEngine extends AbstractEngine {
     public start(): string {
         return 'Deu partida no motor popular';
     }
 }
 
-class PopularOnboardSystem implements AbstractOnboardSystem {
+class PopularOnboardSystem extends AbstractOnboardSystem {
     public lockDoors(): string {
         return 'Portas do carro popular trancadas';
     }

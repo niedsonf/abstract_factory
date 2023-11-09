@@ -1,6 +1,6 @@
 import { AbstractFactory, AbstractWheel, AbstractEngine, AbstractOnboardSystem } from "./abstracts";
 
-export class SportiveFactory implements AbstractFactory {
+export class SportiveFactory extends AbstractFactory {
     public createWheel(): AbstractWheel {
         return new SportiveWheel();
     }
@@ -14,21 +14,25 @@ export class SportiveFactory implements AbstractFactory {
     }
 }
 
-class SportiveWheel implements AbstractWheel {
-    rim = 20;
+class SportiveWheel extends AbstractWheel {
+    protected rim = 20
+
+    public seeRim(): string {
+        return `Pneu esportivo aro ${this.rim}"`;
+    }
     public inflate(): string {
         return 'Pneu esportivo calibrado';
     }
 }
 
-class SportiveEngine implements AbstractEngine {
+class SportiveEngine extends AbstractEngine {
     public start(): string {
         return 'Deu partida no motor esportivo';
     }
 }
 
 
-class SportiveOnboardSystem implements AbstractOnboardSystem {
+class SportiveOnboardSystem extends AbstractOnboardSystem {
     public lockDoors(): string {
         return 'Portas do carro esportivo trancadas';
     }
