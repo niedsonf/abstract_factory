@@ -15,7 +15,7 @@ export class PopularFactory extends AbstractFactory {
 }
 
 class PopularWheel extends AbstractWheel {
-    rim = 16;
+    protected rim = 16;
     public seeRim(): string {
         return `Pneu popular aro ${this.rim}"`;
     }
